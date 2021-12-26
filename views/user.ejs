@@ -1,0 +1,93 @@
+<%- include('partials/header') %>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+  <body>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col text-center">
+          <div class="text-light rounded-3 bg-dark border border-5 border-light py-3 px-4">
+            <h2 class="mb-4 fw-normal">Welcome <em><strong>
+                  <%= firstname %>
+                </strong></em>!</h2>
+            <form action="/post" method="POST">
+              <div class="form-group">
+                <input type="text" class="m-auto form-control text-center mb-3 mt-3" name="post"
+                  placeholder="What's on your mind today?">
+              </div>
+              <button type="submit" class="btn btn-danger btn-lg my-2">Share with others</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-6">
+          <main class="form-signin2">
+            <div class="bg-light rounded-3 border border-5 border-light">
+              <div class="container-fluid py-3 px-5">
+                <% user.forEach(function(user) { %>
+                  <div class="row">
+                    <div class="col">
+                      <p class="text-end"><em>
+                          <%= user.post.date %>
+                        </em></p>
+                    </div>
+                  </div>
+                  <div class="row mb-5">
+                    <div class="col">
+                      <p class="postedText fs-4">
+                        <%= user.post.postMaterial %>
+                      </p>
+                    </div>
+                  </div>
+                  <% }) %>
+              </div>
+            </div>
+            <a class="btn btn-lg btn-dark" href="/main" role="button" id="back">Homepage</a>
+            <div>
+              <form action="/logout" method="POST" class="aBottom">
+                <button class="w-45 btn btn-lg btn-dark" id="logOut">Logout</button>
+              </form>
+            </div>
+          </main>
+        </div>
+        <div class="col">
+          <div class="rounded-3 bg-light border border-5 border-light py-3 px-4">
+            <h3 class="mb-4 fw-normal text-center">User Profile</h3>
+            <!-- <div class="row">
+              <div class="col-4">
+                <p>Profile Picture: </p>
+              </div>
+              <div class="col">
+                <input type="file" id="selectedFile" style="display: none;" />
+                <input type="button" value="Browse..." onclick="document.getElementById('selectedFile').click();" />
+              </div>
+            </div> -->
+            <div class="row">
+              <div class="col-4">
+                <p>First Name: </p>
+                <p>Last Name: </p>
+                <p>Username: </p>
+                <p>Email: </p>
+              </div>
+              <div class="col">
+                <p class="fst-italic fw-bold">
+                  <%= firstname %>
+                </p>
+                <p class="fst-italic fw-bold">
+                  <%= lastname %>
+                </p>
+                <p class="fst-italic fw-bold">
+                  <%= username %>
+                </p>
+                <p class="fst-italic fw-bold">
+                  <%= email %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<%- include('partials/footer') %>

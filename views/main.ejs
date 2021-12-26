@@ -1,0 +1,46 @@
+<%- include('partials/header') %>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+  <body class="newFlexSystem">
+
+    <main class="form-signin2">
+      <h1 class="mb-4 fw-normal text-center">The Wall</h1>
+      <div class="container py-2">
+        <div class="bg-light rounded-3">
+          <div class="container-fluid py-5 px-5">
+            <% userPost.forEach(function(posted) { %>
+              <div class="row">
+                <div class="col">
+                  <p class="ps-2"><em>By -<%= posted.post.postUser %></em></p>
+                </div>
+                <div class="col">
+                  <p class="text-end"><em>
+                      <%= posted.post.date %>
+                    </em></p>
+                </div>
+              </div>
+              <div class="row mb-5">
+                <div class="col">
+                  <p class="postedText fs-4">
+                    <%= posted.post.postMaterial %>
+                  </p>
+                </div>
+              </div>
+            <% }) %>
+
+
+          </div>
+        </div>
+      </div>
+      
+      <a class="btn btn-lg btn-dark" role="button" id="up">↑</a>
+      <a class="btn btn-lg btn-dark" href="/user" role="button" id="forth">User Profile</a>
+      <div>
+        <form action="/logout" method="POST" class="aBottom">
+          <button class="w-45 btn btn-lg btn-dark" id="logOut">Logout</button>
+        </form>
+      </div>
+    </main>
+
+<%- include('partials/footer') %>

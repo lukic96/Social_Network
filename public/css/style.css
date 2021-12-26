@@ -1,0 +1,153 @@
+html,
+body {
+  height: 100%;
+  background-color: #E8ECEF;
+  padding: 20px;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+
+.flexSystem {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.newFlexSystem {
+  display: flex;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  /* border: 1px solid red; */
+}
+
+#logOut {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+}
+
+#forth {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 99;
+}
+
+#back {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  z-index: 99;
+}
+
+#up {
+  display: none;
+  position: fixed;
+  top: 45vh;
+  left: 30px;
+  z-index: 99;
+}
+
+#togglePassword {
+  cursor: pointer;
+  z-index: 100;
+}
+
+form i {
+  margin-left: -30px;
+  cursor: pointer;
+}
+
+
+.postedText {
+  background: #E8ECEF;
+  padding: 10px 15px;
+}
+
+
+hr {
+    color: #a1a1a1;
+}
+
+.form-signin {
+  width: 80%;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin2 {
+  width: 90%;
+  /* border: 1px solid black; */
+  margin: 0 auto;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input {
+  margin-bottom: 2px;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 15px;
+}
+
+#comment {
+  cursor: pointer;
+}
+
+#comment:hover {
+  font-style: italic;
+}
+
+.likeDislike {
+  cursor: pointer;
+}
+
+
+
+/* likes/dislike animation */
+
+@-webkit-keyframes hvr-push {
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes hvr-push {
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.hvr-push {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-push:hover, .hvr-push:focus, .hvr-push:active {
+  -webkit-animation-name: hvr-push;
+  animation-name: hvr-push;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
