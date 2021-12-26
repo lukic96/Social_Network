@@ -1,0 +1,1 @@
+Login/Register form with authentication. After login, there is a main page where you can see all posts from all registered users. Also possible to see user page with basic info from registration, only their own posts and input for submitting post.
